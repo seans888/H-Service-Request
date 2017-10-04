@@ -31,12 +31,10 @@ $this->title = 'Taal Vista Ticketing System';
             </div>
 
             <div class="col-lg-4">
-                <h2>Heading</h2>
+               <h2>Ticket</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Ticket is the lifeline of every services requested by the gues, carrying the information on the service needed.Click ticket to see the Information and it's current state.</p>
+
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
             </div>
