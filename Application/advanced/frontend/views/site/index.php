@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this yii\web\View */
 
 $this->title = 'Taal Vista Ticketing System';
@@ -19,7 +18,10 @@ $this->title = 'Taal Vista Ticketing System';
         <div class="row">
             
             <div class="col-lg-4">
-                <img src = "instruction.png"/>
+            <br>
+
+            <img src = "instruction.png"/>
+              
             </br>
                 <h2>System Instructions</h2>
 
