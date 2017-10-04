@@ -31,6 +31,7 @@ $this->title = 'Taal Vista Ticketing System';
             </div>
 
             <div class="col-lg-4">
+             <img src = "ticket.png"/>
                <h2>Ticket</h2>
 
                 <p>Ticket is the lifeline of every services requested by the gues, carrying the information on the service needed.Click ticket to see the Information and it's current state.</p>
