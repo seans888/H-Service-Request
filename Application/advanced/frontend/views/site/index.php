@@ -40,6 +40,7 @@ $this->title = 'Taal Vista Ticketing System';
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Create Ticket</a></p>
             </div>
             <div class="col-lg-4">
+             <img src = "hk.png"/>
                 <h2>HK and Engineering</h2>
 
                <p>Operations such as House-keeping or maintainance are recorded in a databse and Reports can then be generate to see some statistics and data appropriate data.</p>
