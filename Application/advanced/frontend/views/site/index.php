@@ -40,7 +40,7 @@ $this->title = 'Taal Vista Ticketing System';
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Create Ticket</a></p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>HK and Engineering</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
