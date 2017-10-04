@@ -11,7 +11,7 @@ $this->title = 'Taal Vista Ticketing System';
 
         <p class="lead">This is Taal Vista Service Ticketing System..</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Create Ticket</a></p>
     </div>
 
     <div class="body-content">
