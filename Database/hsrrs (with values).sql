@@ -197,6 +197,7 @@ INSERT INTO `ticket_type` (`id`, `type_name`) VALUES
 (3, 'Guest Room Setup Request'),
 (4, 'Guest Room Assistance Request'),
 (5, 'Guest Room Maintenance Request'),
+(6, 'Guest Aircon Assistance'),
 
 
 --
