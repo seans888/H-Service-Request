@@ -67,6 +67,7 @@ INSERT INTO `employee` (`id`, `emp_lname`, `emp_fname`, `emp_mname`, `emp_contac
 (2015105, 'Peralta', 'Francis Dodi', 'Acosta', '096123789035', 5, 2),
 (2015106, 'Borlongan', 'Neil John', 'Ppppp', '099215814701', 1, 1),
 (2015107, 'Pedralvez', 'Benjamin', 'Telan', '09321654123', 2, 1),
+(2015108, 'Bregias', 'Kevin', 'Gggg', '09741852963', 3, 1),
 
 
 -- --------------------------------------------------------
