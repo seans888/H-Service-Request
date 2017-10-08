@@ -1,7 +1,7 @@
 /* Ticket Type Count */
 /* For Engineering */
-Select type_name,
-    from ticket_type
+Select id,
+    from ticket
                 where department_id = 1
 
 /* For Housekeeping */
