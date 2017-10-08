@@ -198,7 +198,7 @@ INSERT INTO `ticket_type` (`id`, `type_name`) VALUES
 (4, 'Guest Room Assistance Request'),
 (5, 'Guest Room Maintenance Request'),
 (6, 'Guest Aircon Assistance'),
-
+(7, 'Busted Bulb'),
 
 --
 -- Indexes for dumped tables
