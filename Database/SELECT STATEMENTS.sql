@@ -1,6 +1,6 @@
 /* Ticket Type Count */
 /* For Engineering */
-Select id,
+Select type_name, count(ticket.ticket_type_id)
     from ticket
                 where department_id = 1
 
