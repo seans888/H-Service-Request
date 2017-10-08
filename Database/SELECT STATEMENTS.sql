@@ -3,7 +3,7 @@
 Select type_name, count(ticket.ticket_type_id) as count
     from ticket_type
            join ticket
-            on (ticket.id = ticket.ticket_type_id)
+            on (ticket_type.id = ticket_type.ticket_type_id)
                 where department_id = 1
    
 /* For Housekeeping */
