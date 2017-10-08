@@ -200,6 +200,17 @@ INSERT INTO `ticket_type` (`id`, `type_name`) VALUES
 (6, 'Guest Aircon Assistance'),
 (7, 'Busted Bulb'),
 (8, 'Guest Assistance - Others'),
+(8, 'Guest Assistance - Others'),
+(9, 'Guest TV Assistance'),
+(10, 'Guest Door Lock Assistance'),
+(11, 'Carpentry Works'),
+(12, 'Guest Toilet Assistance'),
+(13, 'Plumbing Works'),
+(14, 'Clogged Toilet'),
+(15, 'Electrical Works'),
+(16, 'Guest Electrical Assistance'),
+(17, 'Guest Telephone Assistance'),
+(18, 'Leak Fixing');
 --
 -- Indexes for dumped tables
 --
