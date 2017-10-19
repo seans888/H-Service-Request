@@ -1,1 +1,1 @@
-THis is the frontend folder of the web application
+THis is the backend folder of the web application
