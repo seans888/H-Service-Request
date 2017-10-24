@@ -81,6 +81,7 @@ class TicketController extends Controller
         throw new ForbiddenHttpException;
         
     } 
+}
 
     /**
      * Updates an existing Ticket model.
@@ -107,6 +108,7 @@ class TicketController extends Controller
             throw new ForbiddenHttpException;
             
         }  
+    }
 
     /**
      * Deletes an existing Ticket model.
