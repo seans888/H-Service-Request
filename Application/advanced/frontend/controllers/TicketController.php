@@ -76,6 +76,11 @@ class TicketController extends Controller
             ]);
         }
     }
+    else
+    {
+        throw new ForbiddenHttpException;
+        
+    } 
 
     /**
      * Updates an existing Ticket model.
