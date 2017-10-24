@@ -63,6 +63,9 @@ class TicketController extends Controller
      */
     public function actionCreate()
     {
+        if (Yii::$app->user->can('create.ticket'))
+        {
+            $model = new Ticket();
         $model = new Ticket();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
