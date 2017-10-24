@@ -123,6 +123,11 @@ class TicketController extends Controller
 
         return $this->redirect(['index']);
     }
+    else
+    {
+        throw new ForbiddenHttpException;
+    }
+    }
 
     /**
      * Finds the Ticket model based on its primary key value.
