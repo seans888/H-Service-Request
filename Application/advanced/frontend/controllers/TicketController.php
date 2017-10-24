@@ -102,6 +102,11 @@ class TicketController extends Controller
             ]);
         }
     }
+    else
+        {
+            throw new ForbiddenHttpException;
+            
+        }  
 
     /**
      * Deletes an existing Ticket model.
