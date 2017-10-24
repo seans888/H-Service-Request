@@ -76,6 +76,10 @@ class TicketController extends Controller
             ]);
         }
     }
+         else
+            {
+        throw new ForbiddenHttpException;
+            }
         }
 
     /**
