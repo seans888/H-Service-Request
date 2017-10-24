@@ -122,6 +122,11 @@ class TicketController extends Controller
 
         return $this->redirect(['index']);
     }
+    else
+{
+    throw new ForbiddenHttpException;
+}
+}
 
 
     public function actionTabsData() {
