@@ -90,6 +90,8 @@ class TicketController extends Controller
      */
     public function actionUpdate($id)
     {
+         if (Yii::$app->user->can('update.ticket'))
+            {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
