@@ -9,10 +9,10 @@
 
 
 /* Item Request Count */
-select tick_request as 'ITEM REQUEST', count(*) as COUNTS from ticket 
-WHERE ticket_type_ID = 3 
+select tick_request as 'ITEM REQUEST', count(*) as COUNT from ticket 
+WHERE ticket_type_ID = 2
 group by tick_request 
-order by counts 
+order by count
 desc limit 3
 
 
