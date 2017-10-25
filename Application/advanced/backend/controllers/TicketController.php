@@ -8,6 +8,7 @@ use backend\models\TicketSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * TicketController implements the CRUD actions for Ticket model.
