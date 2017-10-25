@@ -30,7 +30,7 @@ class TicketController extends Controller
                     'roles'=>['@']
                       ]
                         ]
-                    ]
+                    ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
