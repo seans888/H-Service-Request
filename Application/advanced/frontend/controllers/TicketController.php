@@ -23,7 +23,7 @@ class TicketController extends Controller
             return [
             'access'=>[
                 'class'=>AccessControl::classname(),
-                'only'=>['create','update'],
+                'only'=>['create','update','view'],
                 'rules'=>[
                     [
                     'allow'=>true,
