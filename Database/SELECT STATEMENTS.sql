@@ -139,7 +139,7 @@ Select type_name 'Type of Request Received',
 count(ticket.ticket_type_id) as count from ticket_type
 join ticket on(ticket_type.id=ticket.ticket_type_id)
 where ticket_type_id IN(1, 2) AND tick_startDate
-BETWEEN DATE_ADD(NOW(), INTERVAL -1 WEEK
+BETWEEN DATE_ADD(NOW(), INTERVAL -1 WEEK) 
 
 
 /* Electrical repair request */
