@@ -85,7 +85,7 @@ count(ticket.ticket_type_id) as count from ticket_type
 join ticket on (ticket_type.id=ticket.ticket_type_id)
 where ticket_type_id IN(1, 2) AND tick_startDate
 BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
-
+AND NOW() group by ticket_type.id 
 
 /* Outstanding Employee */
 
