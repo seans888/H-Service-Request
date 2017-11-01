@@ -97,3 +97,5 @@ AND NOW() group by user.id order by count desc limit 3
 
 
 /* Ticket count in location */
+Select room_location as 'Location' ,
+count(room.room_no) as count from room
