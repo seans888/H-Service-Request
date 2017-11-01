@@ -25,7 +25,7 @@ Select username, count(user.id)
 as count from user left join ticket on (user.id = ticket.assigned_to)
 where ticket_type_id in ('3','4') AND tick_startDate
 BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
-AND NOW() group by user.id
+AND NOW() group by user.id order by count desc limit 3
 
 
 /* Ticket count in location */
