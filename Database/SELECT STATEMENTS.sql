@@ -137,8 +137,8 @@ AND NOW() group by tick_request order by count desc limit 3
 /* Type count */
 Select type_name 'Type of Request Received',
 count(ticket.ticket_type_id) as count from ticket_type
-join ticket on(ticket_type.id=ticket.ticket_type_id) 
-
+join ticket on(ticket_type.id=ticket.ticket_type_id)
+where ticket_type_id IN(1, 2) 
 
 
 /* Electrical repair request */
