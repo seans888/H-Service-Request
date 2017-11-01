@@ -109,6 +109,8 @@ AND NOW()  group by room.room_location order by count desc
 /* HOUSEKEEPING WEEKLY REPORT */
 
 /* Type count */
+Select type_name 'Type of Request Received',
+count(ticket.ticket_type_id) as count from ticket_type
 
 
 /* Item Request */
