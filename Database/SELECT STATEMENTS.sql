@@ -74,7 +74,7 @@ AND NOW() group by tick_request order by count desc limit 3
 
 /* NON-Electrical Repair Request */
 select tick_request as 'NON-ELECTRICAL REPAIR REQUEST',
-count(*) as COUNT from ticket 
+count(*) as COUNT from ticket WHERE ticket_type_ID = 2
 
 
 /* Counts of all ticket */
