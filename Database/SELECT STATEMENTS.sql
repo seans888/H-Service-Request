@@ -28,7 +28,7 @@ Select room_location as 'Location' , count(room.room_no)
 as count from room left join ticket on (room.room_no = ticket.room_room_no)
 where ticket_type_id in ('3','4')
 AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
-AND NOW()  group by room.room_location 
+AND NOW()  group by room.room_location order by count desc
 
 
 /* Rooms that requested more than one in housekeeping department */
