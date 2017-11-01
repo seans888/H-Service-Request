@@ -3,7 +3,7 @@
 /* Type count */
 Select type_name 'Type of Request', count(ticket.ticket_type_id)
 as count from ticket_type join ticket on(ticket_type.id=ticket.ticket_type_id)
-AND tick_startDate BETWEEN DATE_ADD(NOW()
+AND tick_startDate BETWEEN DATE_ADD(NOW() group by ticket_type.id ORDER BY COUNT DESC
 
 
 
