@@ -111,10 +111,10 @@ AND NOW()  group by room.room_location order by count desc
 /* Type count */
 Select type_name 'Type of Request Received',
 count(ticket.ticket_type_id) as count from ticket_type
-join ticket on(ticket_type.id=ticket.ticket_type_id)
+left join ticket on(ticket_type.id=ticket.ticket_type_id)
 where ticket_type_id IN(3,4) AND tick_startDate
 BETWEEN DATE_ADD(NOW(), INTERVAL -1 WEEK)
-AND NOW() group by ticket_type.id
+AND NOW() group by ticket_type.id ORDER BY COUNT DESC
 
 /* Item Request */
 
