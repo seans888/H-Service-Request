@@ -99,7 +99,7 @@ AND NOW() group by user.id order by count desc limit 3
 /* Ticket count in location */
 Select room_location as 'Location' ,
 count(room.room_no) as count from room
-join ticket on (room.room_no = ticket.room_room_no)
+left join ticket on (room.room_no = ticket.room_room_no)
 where ticket_type_id in ('1','2')
 AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
 AND NOW()  group by room.room_location order by count desc
