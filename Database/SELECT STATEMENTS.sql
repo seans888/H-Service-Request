@@ -21,7 +21,10 @@ AND NOW() group by tick_request order by count desc limit 3
 
 
 /* Outstanding Employee */
-
+Select username, count(user.id)
+as count from user join ticket on (user.id = ticket.assigned_to)
+AND tick_startDate
+BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH
 
 /* Ticket count in location */
 Select room_location as 'Location' , count(room.room_no)
@@ -33,6 +36,6 @@ AND NOW()  group by room.room_location order by count desc
 
 /* Rooms that requested more than one in housekeeping department */
 select room_room_no as 'Room', count(*)
-as COUNT from ticket 
+as COUNT from ticket
 AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
 AND NOW() group by room_room_no
