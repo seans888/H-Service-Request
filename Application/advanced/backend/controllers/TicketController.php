@@ -123,6 +123,17 @@ class TicketController extends Controller
             
         }  
         }
+        public function actionEnd($id)
+    {
+        $model = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())){
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('end', [
+                'model' => $model,
+            ]);
+        }
+    }
 
     /**
      * Deletes an existing Ticket model.
