@@ -19,8 +19,9 @@ AND NOW() group by tick_request order by count desc limit 3
 
 /* Counts of all ticket */
 Select 'Total', sum(count)
-from (Select type_name 'Type of Request', count(ticket.ticket_type_id)
-as count from ticket_type join ticket on (ticket_type.id=ticket.ticket_type_id) 
+from (Select type_name 'Type of Request Received', count(ticket.ticket_type_id)
+as count from ticket_type join ticket on (ticket_type.id=ticket.ticket_type_id)
+AND tick_startDate 
 
 
 /* Outstanding Employee */
