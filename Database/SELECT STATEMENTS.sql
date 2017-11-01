@@ -125,3 +125,5 @@ AND NOW() group by tick_request order by count desc limit 3
 
 
 /* Assistance Request */
+select tick_request as 'ITEM REQUEST', count(*)
+as COUNT from ticket 
