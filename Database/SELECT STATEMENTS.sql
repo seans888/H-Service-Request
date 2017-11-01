@@ -60,8 +60,8 @@ AND NOW() group by room_room_no having count(*) > 1 order by COUNT desc
 Select type_name 'Type of Request Received',
 count(ticket.ticket_type_id) as count
 from ticket_type left join ticket on(ticket_type.id=ticket.ticket_type_id)
-AND tick_startDate
-BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) 
+where ticket_type_id IN(1, 2) AND tick_startDate 
+BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
 
 
 /* Electrical Repair Request */
