@@ -82,6 +82,7 @@ class TicketController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) 
             $model->tick_startDate = new \yii\db\Expression('NOW()');
+            $model->created_by = Yii::$app->user->identity->id;
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->renderAjax('create', [
