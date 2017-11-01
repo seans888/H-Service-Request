@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HKTop3Item" language="groovy" pageWidth="333" pageHeight="150" columnWidth="293" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5e83d285-16be-4c3e-82ff-61d7389a8231">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select tick_request as 'ITEM REQUEST', count(*) as COUNT from ticket WHERE ticket_type_ID = 3 AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by tick_request order by count desc limit 3]]>
+	</queryString>
+	<field name="ITEM REQUEST" class="java.lang.String"/>
+	<field name="COUNT" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="146" height="20" uuid="4422e099-9ccd-4e7d-ae3e-99ae313b222d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM REQUEST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="0" width="146" height="20" uuid="5ae88dda-928d-4a1c-aa20-4e84c55bd1d1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COUNT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="146" height="20" uuid="8e8e4a33-8ff0-4940-96f4-588f2da5a935"/>
+				<textFieldExpression><![CDATA[$F{ITEM REQUEST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="0" width="146" height="20" uuid="da3d7e78-0d9a-4ad5-92d8-d24107ca1154"/>
+				<textFieldExpression><![CDATA[$F{COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
