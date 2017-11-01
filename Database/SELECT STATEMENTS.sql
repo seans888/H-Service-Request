@@ -101,3 +101,4 @@ Select room_location as 'Location' ,
 count(room.room_no) as count from room
 join ticket on (room.room_no = ticket.room_room_no)
 where ticket_type_id in ('1','2')
+AND NOW()  group by room.room_location
