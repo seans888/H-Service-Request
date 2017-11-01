@@ -146,7 +146,7 @@ AND NOW() group by ticket_type.id ORDER BY COUNT DESC
 /* Electrical repair request */
 select tick_request as 'ELECTRICAL REPAIR REQUEST', count(*)
 as COUNT from ticket WHERE ticket_type_ID = 1
-
+AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 WEEK
 
 
 /* NON-Electrical Repair Request */
