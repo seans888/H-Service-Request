@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HKTop3Assistance" language="groovy" pageWidth="333" pageHeight="802" columnWidth="293" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4fd5c225-e877-4cda-8b0c-d08a72e81c8e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select tick_request as 'ASSISTANCE REQUEST', count(*) as COUNT from ticket WHERE ticket_type_ID = 4 AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by tick_request order by count desc limit 3]]>
+	</queryString>
+	<field name="ASSISTANCE REQUEST" class="java.lang.String"/>
+	<field name="COUNT" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="146" height="20" uuid="5ab88bce-23a2-46f4-a2cb-7b702387618b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASSISTANCE REQUEST]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="0" width="146" height="20" uuid="775bdeaa-bcc1-4fdc-8d4b-60a0ca8c4082"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COUNT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="146" height="20" uuid="d1e3acf1-32ed-4c8f-8ee2-9e9b8b05d2e1"/>
+				<textFieldExpression><![CDATA[$F{ASSISTANCE REQUEST}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="0" width="146" height="20" uuid="77539b26-0486-4488-afbc-10b757c65ab4"/>
+				<textFieldExpression><![CDATA[$F{COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
