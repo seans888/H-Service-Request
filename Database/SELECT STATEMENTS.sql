@@ -144,6 +144,8 @@ AND NOW() group by ticket_type.id ORDER BY COUNT DESC
 
 
 /* Electrical repair request */
+select tick_request as 'ELECTRICAL REPAIR REQUEST', count(*)
+as COUNT from ticket 
 
 
 /* NON-Electrical Repair Request */
