@@ -57,6 +57,10 @@ AND NOW() group by room_room_no having count(*) > 1 order by COUNT desc
 /* MONTHLY REPORT FOR ENGINEERING */
 
 /* Type count */
+Select type_name 'Type of Request',
+count(ticket.ticket_type_id) as count
+from ticket_type join ticket on(ticket_type.id=ticket.ticket_type_id)
+AND tick_startDate
 
 
 /* Electrical Repair Request */
