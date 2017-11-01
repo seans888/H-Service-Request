@@ -34,3 +34,4 @@ AND NOW()  group by room.room_location order by count desc
 /* Rooms that requested more than one in housekeeping department */
 select room_room_no as 'Room', count(*)
 as COUNT from ticket where ticket_type_id in (3,4)
+AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH
