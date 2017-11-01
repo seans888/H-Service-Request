@@ -26,6 +26,7 @@ AND NOW() group by tick_request order by count desc limit 3
 /* Ticket count in location */
 Select room_location as 'Location' , count(room.room_no)
 as count from room join ticket on (room.room_no = ticket.room_room_no)
+where ticket_type_id in ('3','4')
 AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
 
 
