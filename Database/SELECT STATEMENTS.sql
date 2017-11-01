@@ -54,6 +54,21 @@ AND NOW() group by room_room_no having count(*) > 1 order by COUNT desc
 
 
 
-
-
 /* MONTHLY REPORT FOR ENGINEERING */
+
+/* Type count */
+
+
+/* Electrical Repair Request */
+
+
+/* NON-Electrical Repair Request */
+
+
+/* Counts of all ticket */
+
+
+/* Outstanding Employee */
+
+
+/* Ticket count in location */
