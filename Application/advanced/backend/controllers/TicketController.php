@@ -80,7 +80,8 @@ class TicketController extends Controller
         {
         $model = new Ticket();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) 
+            $model->tick_startDate = new \yii\db\Expression('NOW()');
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->renderAjax('create', [
