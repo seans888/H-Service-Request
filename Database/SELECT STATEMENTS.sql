@@ -51,3 +51,9 @@ select room_room_no as 'Room', count(*)
 as COUNT from ticket where ticket_type_id in (3,4)
 AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
 AND NOW() group by room_room_no having count(*) > 1 order by COUNT desc
+
+
+
+
+
+/* MONTHLY REPORT FOR ENGINEERING */
