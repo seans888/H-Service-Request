@@ -22,9 +22,10 @@ AND NOW() group by tick_request order by count desc limit 3
 
 /* Outstanding Employee */
 Select username, count(user.id)
-as count from user join ticket on (user.id = ticket.assigned_to)
-where ticket_type_id in ('3','4')
-AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH
+as count from user left join ticket on (user.id = ticket.assigned_to)
+where ticket_type_id in ('3','4') AND tick_startDate
+BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
+AND NOW() group by user.id
 
 
 /* Ticket count in location */
