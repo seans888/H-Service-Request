@@ -7,8 +7,6 @@ where ticket_type_id IN(3,4) AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL
 AND NOW() group by ticket_type.id ORDER BY COUNT DESC
 
 
-
-
 /* Item Request Count */
 select tick_request as 'ITEM REQUEST', count(*)
 as COUNT from ticket WHERE ticket_type_ID = 3
@@ -16,6 +14,16 @@ AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
 AND NOW() group by tick_request order by count desc limit 3
 
 
-
-
 /* Assistance Request Count */
+
+
+/* Counts of all ticket */
+
+
+/* Outstanding Employee */
+
+
+/* Ticket count in location */
+
+
+/* Rooms that requested more than one in housekeeping department */
