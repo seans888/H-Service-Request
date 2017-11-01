@@ -1,10 +1,10 @@
 /* MONTHLY REPORT FOR HOUSEKEEPING*/
 
 /* Type count */
-Select type_name 'Type of Request', count(ticket.ticket_type_id)
+Select type_name 'Type of Request Received', count(ticket.ticket_type_id)
 as count from ticket_type left join ticket on(ticket_type.id=ticket.ticket_type_id)
 where ticket_type_id IN(3,4) AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH)
-AND NOW() group by ticket_type.id
+AND NOW() group by ticket_type.id ORDER BY COUNT DESC
 
 
 
