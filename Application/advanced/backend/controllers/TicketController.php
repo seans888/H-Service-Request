@@ -129,6 +129,8 @@ class TicketController extends Controller
         if ($model->load(Yii::$app->request->post())){
             $model->tick_closed_date = new \yii\db\Expression('NOW()');
              $model->closed_by = Yii::$app->user->identity->id;
+             $model->save();
+             
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('end', [
