@@ -15,6 +15,8 @@ AND NOW() group by tick_request order by count desc limit 3
 
 
 /* Assistance Request Count */
+select tick_request as 'ASSISTANCE REQUEST', count(*)
+as COUNT from ticket AND tick_startDate
 
 
 /* Counts of all ticket */
