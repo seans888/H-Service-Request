@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HKtop3emp" language="groovy" pageWidth="333" pageHeight="150" columnWidth="293" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a23e9f68-fb0e-4c8f-820f-0c9f7b5e8f5f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select username, count(user.id) as count from user left join ticket on (user.id = ticket.assigned_to) where ticket_type_id in ('3','4') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by user.id order by count desc limit 3]]>
+	</queryString>
+	<field name="username" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="count" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="164" height="20" uuid="e2d680f0-19d0-4e9e-ba1e-673dbfcba81c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Outstanding Employee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="164" y="0" width="129" height="20" uuid="926adc3d-da59-4f90-b952-a6b2b85e21d8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Count]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="164" height="20" uuid="a3aa0655-cf71-49d8-85fa-83a92a181df7"/>
+				<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="164" y="0" width="129" height="20" uuid="9e291197-ddbc-4a1a-ab18-8b94d487ceb0"/>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
