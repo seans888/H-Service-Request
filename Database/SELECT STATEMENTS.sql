@@ -116,7 +116,11 @@ where ticket_type_id IN(3,4) AND tick_startDate
 BETWEEN DATE_ADD(NOW(), INTERVAL -1 WEEK)
 AND NOW() group by ticket_type.id ORDER BY COUNT DESC
 
+
 /* Item Request */
+select tick_request as 'ITEM REQUEST', count(*)
+as COUNT from ticket
+
 
 
 /* Assistance Request */
