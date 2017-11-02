@@ -14,6 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'room_room_no')->textInput(['readonly' => true]) ?>
 
+    <?= $form->field($model, 'tick_request')->textInput(['readonly' => true]) ?>   
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'End', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
