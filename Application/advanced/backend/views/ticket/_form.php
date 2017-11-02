@@ -55,8 +55,7 @@ use kartik\datetime\DateTimePicker;
     ) ?>
 
     
-         <?= $form->field($model, 'user_idCreated')->textInput(
-          , 
+         <?= $form->field($model, 'user_idCreated')->textInput(['readonly' => true, 'value' => Yii::$app->user->identity->id])
      
     ) ?>
 
