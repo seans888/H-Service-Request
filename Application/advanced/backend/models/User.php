@@ -97,4 +97,8 @@ class User extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
     }
+    public function getUsername()
+    {
+        return Yii::$app->user->identity->id;
+    }
 }
