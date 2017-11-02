@@ -55,9 +55,9 @@ use kartik\datetime\DateTimePicker;
     ) ?>
 
     
-         <?= $form->field($model, 'user_idCreated')->dropDownList(
-        ArrayHelper::map(User::find()->all(),'id','username')    , 
-    ['prompt'=>'Select Information'] 
+         <?= $form->field($model, 'user_idCreated')->textInput(
+          , 
+     
     ) ?>
 
 
