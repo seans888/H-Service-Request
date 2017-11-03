@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ENGmorethan1" language="groovy" pageWidth="333" pageHeight="150" columnWidth="293" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a2f1aca2-cfad-4e97-bd1b-811ffc9ec15c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select room_room_no as 'Room', count(*) as COUNT from ticket where ticket_type_id in (1,2) AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by room_room_no having count(*) > 1 order by COUNT desc]]>
+	</queryString>
+	<field name="Room" class="java.lang.Integer"/>
+	<field name="COUNT" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="180" height="40" forecolor="#736343" uuid="87c4708f-6e24-4964-ae98-69eda1644fe1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Rooms with more than 1 request from engineering]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="180" height="20" uuid="181bc752-82f6-4d41-906d-e1926b3ccad1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Room}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
