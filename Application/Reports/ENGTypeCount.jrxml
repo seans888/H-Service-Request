@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ENGTypeCount" language="groovy" pageWidth="333" pageHeight="842" columnWidth="293" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7c654818-ed50-407b-b341-4a5cf8dc4c70">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select type_name 'Type of Request Received', count(ticket.ticket_type_id) as count from ticket_type left join ticket on(ticket_type.id=ticket.ticket_type_id) where ticket_type_id IN(1,2) AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by ticket_type.id ORDER BY COUNT DESC]]>
+	</queryString>
+	<field name="Type of Request Received" class="java.lang.String"/>
+	<field name="count" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="162" height="20" forecolor="#736343" uuid="cca5bb18-f8e2-4ebd-9166-2b5e11c90d4a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TYPE OF REQUEST RECEIEVED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="0" width="68" height="20" forecolor="#736343" uuid="05f1e543-a37e-47b0-9f94-e478828b72c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COUNT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="162" height="20" uuid="387cbcfc-fab2-4790-9079-f894a9ae270a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Type of Request Received}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="0" width="68" height="20" uuid="714d14c5-d5ed-44c1-aff0-1ecdba0f93fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
