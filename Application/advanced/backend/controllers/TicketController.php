@@ -73,29 +73,30 @@ class TicketController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+   public function actionCreate()
     {
-
-        if (Yii::$app->user->can('create.ticket'))
-        {
         $model = new Ticket();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) 
+        if ($model->load(Yii::$app->request->post())) {
             $model->tick_startDate = new \yii\db\Expression('NOW()');
             $model->created_by = Yii::$app->user->identity->id;
+            $model->tick_timelimit =  $model->request->req_time;
+
+            if($model->assigned_to == null)
+            {
+            $model->tick_status = "Unassigned";
+             }else{
+             $model->tick_status = "Pending";
+            }
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->renderAjax('create', [
+            return $this->render('create', [
                 'model' => $model,
             ]);
         }
     }
-         else
-            {
-        throw new ForbiddenHttpException;
-            }
-        }
+
 
     /**
      * Updates an existing Ticket model.
