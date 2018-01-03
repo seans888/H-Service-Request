@@ -19,6 +19,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </style>
 </body>
+<strong><p>
+	This is the manage Page of the site. This allows you to manage the data in the database, via a <br>
+	Graphical user Interface. Data for Department, Request, Room, and Postion can be added, and edited. 
+</p>
+	</strong>
 
 <?= Html::a('Manage Department', ['department/index'], ['class' => 'btn btn-success']) ?>
 
