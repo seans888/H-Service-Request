@@ -104,13 +104,21 @@ class TicketController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+       public function actionUpdate($id)
     {
-         if (Yii::$app->user->can('update.ticket'))
-            {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) ) {
+
+            if($model->assigned_to == null)
+            {
+            $model->tick_status = "Unassigned";
+             }else{
+             $model->tick_status = "Pending";
+            }
+
+
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -118,12 +126,7 @@ class TicketController extends Controller
             ]);
         }
     }
-    else
-        {
-            throw new ForbiddenHttpException;
-            
-        }  
-        }
+
         public function actionEnd($id)
     {
         $model = $this->findModel($id);
