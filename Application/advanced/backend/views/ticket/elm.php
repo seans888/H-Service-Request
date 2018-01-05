@@ -13,6 +13,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
  $query = "Select req_name, count(ticket.request_req_id) as count from request";   
  $result = mysqli_query($connect, $query); 
+
+ $query2 = "";  
+ $result2 = mysqli_query($connect, $query2);
  ?>
 
 
