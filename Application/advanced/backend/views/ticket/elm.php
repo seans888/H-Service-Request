@@ -257,3 +257,27 @@ Morris.Bar({
  stacked:true
 });
 </script>
+
+<script>
+Morris.Bar({
+ element : 'chart2',
+ data:[<?php echo $chart_data4; ?>],
+ xkey:'name',
+ ykeys:['count'],
+ labels:['Count'],
+ hideHover:'auto',
+ stacked:true
+});
+</script>
+
+<script>
+Morris.Line({
+ element : 'chart5',
+ data:[<?php echo $chart_data5; ?>],
+ xkey:'room_room_no',
+ ykeys:['count'],
+ labels:['Count'],
+ hideHover:'auto',
+ stacked:true
+});
+</script>
