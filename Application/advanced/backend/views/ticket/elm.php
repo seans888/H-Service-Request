@@ -187,6 +187,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <br>
 <br>
 
+<div class="col-md-4 col-sm-4 col-xs-12" style="margin-left: -500px;">
+              <div class="x_panel tile fixed_height_320 overflow_hidden" style="height: 100%; width: 1000px;">
+              	
 <?php
 echo "<table style='border: solid 1px black;'>";
  echo "<tr><th>Id</th><th>Time Limit</th><th>Date Created</th><th>Status</th><th>Date Closed</th><th>Room no.</th><th>Request</th></tr>";
