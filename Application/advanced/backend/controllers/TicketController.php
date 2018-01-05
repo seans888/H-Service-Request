@@ -41,6 +41,17 @@ class TicketController extends Controller
         ];
     }
 
+    public function actionElm()
+    {
+        $searchModel = new TicketSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('elm', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Lists all Ticket models.
      * @return mixed
