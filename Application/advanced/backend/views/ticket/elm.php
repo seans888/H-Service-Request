@@ -97,7 +97,7 @@ $this->params['breadcrumbs'][] = $this->title;
                       //is3D:true,  
                       pieHole: 0.4  
                      };  
-                var chart = new google.visualization.PieChart(document.getElementById(''));  
+                var chart = new google.visualization.PieChart(document.getElementById('piechart3'));  
                 chart.draw(data, options);  
            }  
            </script>  
