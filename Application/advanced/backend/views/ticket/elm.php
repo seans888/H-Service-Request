@@ -187,6 +187,30 @@ $this->params['breadcrumbs'][] = $this->title;
 <br>
 <br>
 
+<?php
+echo "<table style='border: solid 1px black;'>";
+ echo "<tr><th>Id</th><th>Time Limit</th><th>Date Created</th><th>Status</th><th>Date Closed</th><th>Room no.</th><th>Request</th></tr>";
+
+class TableRows extends RecursiveIteratorIterator { 
+    function __construct($it) { 
+        parent::__construct($it, self::LEAVES_ONLY); 
+    }
+
+    function current() {
+        return "<td style='width: 150px; border: 1px solid black;'>" . parent::current(). "</td>";
+    }
+
+    function beginChildren() { 
+        echo "<tr>"; 
+    } 
+
+    function endChildren() { 
+        echo "</tr>" . "\n";
+    } 
+} 
+
+?>
+
       </body>
 
        
