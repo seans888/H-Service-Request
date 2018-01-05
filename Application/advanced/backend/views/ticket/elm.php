@@ -83,7 +83,22 @@ $this->params['breadcrumbs'][] = $this->title;
            google.charts.setOnLoadCallback(drawChart);  
            function drawChart()  
            {  
-                  
+                var data = google.visualization.arrayToDataTable([  
+                          ['Location', 'Count'],  
+                          <?php  
+                          while($row = mysqli_fetch_array($result6))  
+                          {  
+                               echo "['".$row["room_location"]."', ".$row["count"]."],";  
+                          }  
+                          ?>  
+                     ]);  
+                var options = {  
+                      
+                      //is3D:true,  
+                      pieHole: 0.4  
+                     };  
+                var chart = new google.visualization.PieChart(document.getElementById(''));  
+                chart.draw(data, options);  
            }  
            </script>  
 
