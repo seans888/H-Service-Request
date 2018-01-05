@@ -216,7 +216,7 @@ $dbname = "ems3";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare(""); 
+    $stmt = $conn->prepare(")"); 
     $stmt->execute();
 
     // set the resulting array to associative
@@ -245,3 +245,15 @@ echo "</table>";
        
 
 </html>
+
+<script>
+Morris.Bar({
+ element : 'chart',
+ data:[<?php echo $chart_data; ?>],
+ xkey:'name',
+ ykeys:['count'],
+ labels:['Count'],
+ hideHover:'auto',
+ stacked:true
+});
+</script>
