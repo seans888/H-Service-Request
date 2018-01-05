@@ -141,8 +141,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-4 col-sm-4 col-xs-12" style="margin-left: 180px;">
               <div class="x_panel tile fixed_height_320 overflow_hidden" style="height: 100%; width: 450px;">      
  <div class="x_content">
-    <h2></h2>
-     <center><p style ="color:black"> <p></p></center>
+    <h2>Top 5 outstanding employee</h2>
+     <center><p style ="color:black">Results are the top employees who rendered most services  <p></p></center>
 <div id="chart"></div>
 </div>
 </div>
@@ -151,8 +151,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="col-md-4 col-sm-4 col-xs-12";">
               <div class="x_panel tile fixed_height_320 overflow_hidden" style="height: 100%; width: 450px;">      
  <div class="x_content">
-    <h2></h2>
-    <center><p style ="color:black"><p></p></center>
+    <h2>Top 5 Rooms with more than one request</h2>
+    <center><p style ="color:black">These rooms are maybe not being well maintained<p></p></center>
 <div id="chart5"></div>
 </div>
 </div>
