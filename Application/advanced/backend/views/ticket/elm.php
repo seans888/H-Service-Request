@@ -51,6 +51,15 @@ $this->params['breadcrumbs'][] = $this->title;
            }  
            </script>  
 
+           <script type="text/javascript">  
+           google.charts.load('current', {'packages':['corechart']});  
+           google.charts.setOnLoadCallback(drawChart);  
+           function drawChart()  
+           {  
+                  
+           }  
+           </script>  
+
 
 
   </head>  
