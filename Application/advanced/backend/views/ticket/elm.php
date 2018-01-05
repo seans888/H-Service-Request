@@ -161,18 +161,18 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="col-md-4 col-sm-4 col-xs-12" style="margin-left: 180px;">
               <div class="x_panel tile fixed_height_320 overflow_hidden" style="height: 400px; width: 450px;">
                 <div class="x_title">
-                  <h2></h2>
+                  <h2>No. of tickets by location</h2>
                   <div class="clearfix"></div>
                 </div>
           <table width="100%">
                 <tr>
-                    <center><p style ="color:black"><p></p></center>
+                    <center><p style ="color:black">Shows how many requests has been rendered in this particular location <p></p></center>
                       <th style="width:70%;">
                         <p>Range</p>
                       </th>
                       <th>
                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                          <p class=""></p>
+                          <p class="">Location</p>
                         </div>
                       </th>
                     </tr>
