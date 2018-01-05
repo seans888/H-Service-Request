@@ -281,3 +281,28 @@ Morris.Line({
  stacked:true
 });
 </script>
+
+
+<script>
+function showDiv() {
+   document.getElementById('welcomeDiv').style.display = "block";
+}
+</script>
+
+<script type="text/javascript">
+$(window).on('load', function() {
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+$('#pdfview').click(function () {
+    doc.fromHTML($('#pdfdiv').html(), 15, 15, {
+        'width': 700,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('file.pdf');
+});
+});
+</script>
