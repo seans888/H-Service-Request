@@ -110,4 +110,37 @@ $this->params['breadcrumbs'][] = $this->title;
        <a href="javascript:forprint()">Click here to Print the Page</a>
         </div>
 
+        <div align="center">
+
+        	             <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320 overflow_hidden" style="height: 400px; width: 450px;">
+                <div class="x_title">
+                  <h2></h2>
+                  <div class="clearfix"></div>
+                </div>
+          <table width="100%">
+                <tr>
+                    <center><p style ="color:black"><p></p></center>
+                      <th style="width:70%;">
+                        <p>Range</p>
+                      </th>
+                      <th>
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                          <p class=""></p>
+                        </div>
+                      </th>
+                    </tr>
+                 </table>
+                <div class="x_content">
+              <div id="piechart" style="width: 500px; height: 330px;margin-left: -40px;margin-top: -5px;"></div>
+                </div>
+              </div>
+
+            </div>
+
+
       </body>
+
+       
+
+</html>
