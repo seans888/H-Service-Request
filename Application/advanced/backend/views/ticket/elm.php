@@ -16,6 +16,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
  $query2 = "";  
  $result2 = mysqli_query($connect, $query2);
+
+ $query6 = "";  
+ $result6 = mysqli_query($connect, $query6);
  ?>
 
 
