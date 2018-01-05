@@ -115,18 +115,18 @@ $this->params['breadcrumbs'][] = $this->title;
         	             <div class="col-md-4 col-sm-4 col-xs-12">
               <div class="x_panel tile fixed_height_320 overflow_hidden" style="height: 400px; width: 450px;">
                 <div class="x_title">
-                  <h2></h2>
+                  <h2>Top 3 request</h2>
                   <div class="clearfix"></div>
                 </div>
           <table width="100%">
                 <tr>
-                    <center><p style ="color:black"><p></p></center>
+                    <center><p style ="color:black">You might want to consider these items because they lack most of the times. <p></p></center>
                       <th style="width:70%;">
                         <p>Range</p>
                       </th>
                       <th>
                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                          <p class=""></p>
+                          <p class="">Request</p>
                         </div>
                       </th>
                     </tr>
