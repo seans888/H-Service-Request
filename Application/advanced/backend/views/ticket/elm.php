@@ -30,11 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
            function drawChart()  
            {  
                 var data = google.visualization.arrayToDataTable([  
-                          ['', ''],  
+                          ['Enineering', 'Count'],  
                           <?php  
                           while($row = mysqli_fetch_array($result))  
-                          {  
-                               echo "['".$row[""]."', ".$row[""]."],";  
+                          {  	
+                               echo "['".$row["req_name"]."', ".$row["count"]."],";  
                           }  
                           ?>  
                      ]);  
