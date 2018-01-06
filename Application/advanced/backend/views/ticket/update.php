@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Ticket */
+/* @var $model backend\models\Ticket */
 
 $this->title = 'Update Ticket: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Tickets', 'url' => ['index']];

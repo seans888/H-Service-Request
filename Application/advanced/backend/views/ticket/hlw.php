@@ -21,13 +21,13 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php  
  $connect = mysqli_connect("localhost", "root", "qwerty", "ems3"); 
 
- $query = "Select req_name, count(ticket.request_req_id) as count from request left join ticket on(request.req_id=ticket.request_req_id) where ticket.ticket_type_id IN('1', '2') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by request.req_id ORDER BY COUNT DESC";   
+ $query = "Select req_name, count(ticket.request_req_id) as count from request left join ticket on(request.req_id=ticket.request_req_id) where ticket.ticket_type_id IN('3', '4') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 week) AND NOW() group by request.req_id ORDER BY COUNT DESC";   
  $result = mysqli_query($connect, $query); 
 
- $query2 = "Select req_name, count(ticket.request_req_id) as count from request left join ticket on(request.req_id=ticket.request_req_id) where ticket.ticket_type_id IN('1', '2')  AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by request.req_id ORDER BY COUNT DESC limit 3";  
+ $query2 = "Select req_name, count(ticket.request_req_id) as count from request left join ticket on(request.req_id=ticket.request_req_id) where ticket.ticket_type_id IN('3', '4')  AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 week) AND NOW() group by request.req_id ORDER BY COUNT DESC limit 3";  
  $result2 = mysqli_query($connect, $query2);
 
- $query6 = "Select room_location , count(room.room_no) as count from room left join ticket on (room.room_no = ticket.room_room_no) where ticket_type_id in ('1','2') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by room.room_location order by count desc";  
+ $query6 = "Select room_location , count(room.room_no) as count from room left join ticket on (room.room_no = ticket.room_room_no) where ticket_type_id in ('3','4') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 week) AND NOW() group by room.room_location order by count desc";  
  $result6 = mysqli_query($connect, $query6);
  ?>
 
@@ -47,7 +47,7 @@ $this->registerJs($script);
 //index.php
 $connect = mysqli_connect("localhost", "root", "qwerty", "ems3");
 
-$query3 = "Select name, count(user.id) as count from user left join ticket on (user.id = ticket.assigned_to) where ticket_type_id in ('1', '2') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by user.id order by count desc limit 5";
+$query3 = "Select name, count(user.id) as count from user left join ticket on (user.id = ticket.assigned_to) where ticket_type_id in ('3', '4') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 week) AND NOW() group by user.id order by count desc limit 5";
 $result3 = mysqli_query($connect, $query3);
 $chart_data = '';
 while($row = mysqli_fetch_array($result3))
@@ -58,7 +58,7 @@ $chart_data = substr($chart_data, 0, -2);
 
 
 
-$query4 = "Select name, count(user.id) as count from user left join ticket on (user.id = ticket.assigned_to) where ticket_type_id in ('1', '2') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by user.id order by count desc limit 5"; 
+$query4 = "Select name, count(user.id) as count from user left join ticket on (user.id = ticket.assigned_to) where ticket_type_id in ('3', '4') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 week) AND NOW() group by user.id order by count desc limit 5"; 
 $result4 = mysqli_query($connect, $query4);
 $chart_data4 = '';
 while($row = mysqli_fetch_array($result4))
@@ -69,7 +69,7 @@ $chart_data4 = substr($chart_data4, 0, -2);
 
 
 
-$query5 = "select room_room_no, count(*) as count from ticket where ticket_type_id in ('1', '2') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW() group by room_room_no order by count desc limit 5";
+$query5 = "select room_room_no, count(*) as count from ticket where ticket_type_id in ('3', '4') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 Week) AND NOW() group by room_room_no order by count desc limit 5";
 
 
 $result5 = mysqli_query($connect, $query5);
@@ -86,6 +86,7 @@ $chart_data5 = substr($chart_data5, 0, -2);
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    
 
     <?php
         Modal::begin([
@@ -104,7 +105,7 @@ $chart_data5 = substr($chart_data5, 0, -2);
     ?>
 
 <script>
-var divs = ["LM"];
+var divs = ["LW"];
 var visibleDivId = null;
 function toggleVisibility(divId) {
     if (visibleDivId === divId) {
@@ -125,16 +126,6 @@ function hideNonVisibleDivs() {
             div.style.display = "none";
         }
     }
-}
-</script>
-
-<script>
-function forprint(){
-if (!window.print){
-
-return
-}
-window.print()
 }
 </script>
 
@@ -218,19 +209,15 @@ window.print()
                 chart.draw(data, options);  
            }  
            </script>  
-
       </head>  
       <body>  
 
-        <button class="btn btn-lg btn-success" onClick="toggleVisibility('LM');return false;">Last Month</button>
-       <a href="javascript:forprint()">Click here to Print the Page</a>
+        <button class="btn btn-lg btn-success" onClick="toggleVisibility('LW');return false;">Last Week</button>
+              <a href="javascript:forprint()">Click here to Print the Page</a>
         </div>
-              
-<div align="center">
-                
-  
-                        <div class="box" style="height:100%">
 
+        <div id="LM">
+                        <div class="box" style="height:100%">
 
 
                             <div class="col-md-4 col-sm-4 col-xs-12">
@@ -341,7 +328,7 @@ $dbname = "ems3";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("Select ticket.id, ticket.tick_timelimit, ticket.tick_startDate, ticket.tick_status, ticket.tick_closed_date, ticket.room_room_no, req_name as 'Request' from request left join ticket on(request.req_id=ticket.request_req_id) where ticket.ticket_type_id IN('1', '2') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 MONTH) AND NOW()"); 
+    $stmt = $conn->prepare("Select ticket.id, ticket.tick_timelimit, ticket.tick_startDate, ticket.tick_status, ticket.tick_closed_date, ticket.room_room_no, req_name as 'Request' from request left join ticket on(request.req_id=ticket.request_req_id) where ticket.ticket_type_id IN('3', '4') AND tick_startDate BETWEEN DATE_ADD(NOW(), INTERVAL -1 week) AND NOW()"); 
     $stmt->execute();
 
     // set the resulting array to associative
@@ -359,7 +346,6 @@ echo "</table>";
 ?>     
 </div>
 </div>
-
 
 
 
@@ -419,25 +405,17 @@ function showDiv() {
 }
 </script>
 
-<script type="text/javascript">
-$(window).on('load', function() {
-var doc = new jsPDF();
-var specialElementHandlers = {
-    '#editor': function (element, renderer) {
-        return true;
-    }
-};
-$('#pdfview').click(function () {
-    doc.fromHTML($('#pdfdiv').html(), 15, 15, {
-        'width': 700,
-            'elementHandlers': specialElementHandlers
-    });
-    doc.save('file.pdf');
-});
-});
+
+
+<script>
+function forprint(){
+if (!window.print){
+
+return
+}
+window.print()
+}
 </script>
-
-
 
 
 

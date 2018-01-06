@@ -5,7 +5,7 @@ use yii\grid\GridView;
 use yii\widgets\LinkPager;
 use yii\widgets\Pjax;
 use yii\helpers\Url;
-
+use yii\bootstrap\modal;
 
 
 /* @var $this yii\web\View */
@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
   text-align:left;
 }
 .assign {
-    margin-top: 25px;
+    margin-top: 33px;
     margin-left: -500px;
 }
 .created {
@@ -53,37 +53,39 @@ $this->params['breadcrumbs'][] = $this->title;
 }
 .dept {
     margin-top: -25px;
-    margin-left: 570px;
+    margin-left: 740px;
     text-align: left;
 }
-.hover3{
+.V {
+  background: url(<?= Url::to('@web/images/view.png')?>);
   width: 42px;
   height: 24px;
   margin-top: -35px;
-  margin-left: -870px;
 }
-.hover2 {
+
+.V:hover {
+  opacity: 0.7;
+}
+.E{
+  background: url(<?= Url::to('@web/images/edit.png')?>);
   width:40px;
   height: 31px;
   margin-top: -30px;
   margin-left: -775px;
 }
-.hover {
+.E:hover {
+  opacity: 0.7;
+}
+.D {
+  background: url(<?= Url::to('@web/images/remove.png')?>);
   width: 29px;
   height: 34px;
   margin-top: -34px;
   margin-left: -680px;
 }
-.hover3:hover {
+.D:hover {
   opacity: 0.7;
 }
-.hover2:hover {
-  opacity: 0.7;
-}
-.hover:hover {
-  opacity: 0.7;
-}
-
 </style>
  <script>
  var CLASS_NAME = 'status';
@@ -113,24 +115,23 @@ $this->params['breadcrumbs'][] = $this->title;
  </script>
 
  <body onload='myInit();'>
-<p>
-       
+
+    <p>
         <?= Html::a('Create Ticket', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
-
 <center>
-    <?php foreach ($tickets as $ticket): ?>
+    <?php foreach ($tickets4 as $ticket): ?>
     <div id="box">
        <div class="id" style="font-size: 14pt;"><strong>Room&nbsp<?= Html::encode("{$ticket->room_room_no}") ?></strong><br></div>
        <div class="status"><p><?= Html::encode("{$ticket->tick_status}") ?><p></div>
        <div class="description"><?= Html::encode("{$ticket->request->req_name}") ?></div><Br>
        <div class="assign" style="font-size: 14pt;"><?= Html::encode("{$ticket->assignedTo->username}") ?></div>
        <div class="created" style="font-size: 14pt;"><?= Html::encode("{$ticket->createdBy->username}") ?></div>
+      
        <div class="dept" style="font-size: 14pt;"><?= Html::encode("{$ticket->ticketType->department->dept_name}") ?></div>
-       <div class="hover3"><?= Html::a('<img src="images/view.png">', ['view', 'id' => $ticket->id]) ?></div>
-       <div class="hover2"><?= Html::a('<img src="images/edit.png">', ['update', 'id' => $ticket->id]) ?></div>
-       <div class="hover"><?= Html::a('<img src="images/remove.png">', ['delete', 'id' => $ticket->id], [
+       <div class="V"><?= Html::a('<div class="V"></div>', ['view', 'id' => $ticket->id]) ?></div>
+       <div class="E"><?= Html::a('<div class="E"></div>', ['update', 'id' => $ticket->id]) ?></div>
+       <div class="D"><?= Html::a('<div class="D"></div>', ['delete', 'id' => $ticket->id], [
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',

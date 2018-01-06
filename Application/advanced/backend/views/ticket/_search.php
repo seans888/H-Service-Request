@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\TicketSearch */
+/* @var $model backend\models\TicketSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -17,29 +17,30 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'tick_closed_date') ?>
+    <?= $form->field($model, 'tick_request') ?>
 
-    <?= $form->field($model, 'tick_status') ?>
 
-    <?= $form->field($model, 'tick_priority') ?>
+    <?= $form->field($model, 'tick_others') ?>
 
-    <?= $form->field($model, 'tick_startDate') ?>
+    <?= $form->field($model, 'tick_timelimit') ?>
 
-    <?php // echo $form->field($model, 'tick_description') ?>
+    <?php // echo $form->field($model, 'tick_startDate') ?>
 
-    <?php // echo $form->field($model, 'tick_timelimit') ?>
+    <?php // echo $form->field($model, 'tick_status') ?>
 
-    <?php // echo $form->field($model, 'ticket_type_id') ?>
-
-    <?php // echo $form->field($model, 'department_id') ?>
+    <?php // echo $form->field($model, 'tick_closed_date') ?>
 
     <?php // echo $form->field($model, 'room_room_no') ?>
 
-    <?php // echo $form->field($model, 'user_idCreated') ?>
+    <?php // echo $form->field($model, 'ticket_type_id') ?>
 
-    <?php // echo $form->field($model, 'user_id1Assigned') ?>
+    <?php // echo $form->field($model, 'created_by') ?>
 
-    <?php // echo $form->field($model, 'user_id2closed') ?>
+    <?php // echo $form->field($model, 'assigned_to') ?>
+
+    <?php // echo $form->field($model, 'closed_by') ?>
+
+    <?php // echo $form->field($model, 'request_req_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -12,9 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'room_room_no')->textInput(['readonly' => true]) ?>
-
-    <?= $form->field($model, 'tick_request')->textInput(['readonly' => true]) ?>   
+    <?= $form->field($model, 'room_room_no')->textInput(['readonly' => true]) ?>   
 
     <?= $form->field($model, 'tick_status')->textInput(['readonly' => true, 'value' => 'Closed']) ?>
 
