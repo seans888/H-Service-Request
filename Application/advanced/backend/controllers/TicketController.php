@@ -138,6 +138,13 @@ class TicketController extends Controller
         }
     }
 
+	/**
+     * Close a selected Ticket model.
+     * If closing of ticket is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+
         public function actionEnd($id)
     {
         $model = $this->findModel($id);
