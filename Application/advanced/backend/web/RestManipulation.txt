@@ -1,0 +1,26 @@
+$ curl -i -H "Accept:application/xml" "http://localhost/ticket"
+
+HTTP/1.1 200 OK
+...
+X-Pagination-Total-Count: 20
+X-Pagination-Page-Count: 4
+X-Pagination-Current-Page: 1
+X-Pagination-Per-Page: 4
+Link: <http://localhost/ticketr?page=1>; rel=self, 
+      <http://localhost/ticketr?page=2>; rel=next, 
+      <http://localhost/ticketrs?page=3>; rel=last
+Transfer-Encoding: chunked
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+    <item>
+        <id>1</id>
+        ...
+    </item>
+    <item>
+        <id>2</id>
+        ...
+    </item>
+    ...
+</response>
