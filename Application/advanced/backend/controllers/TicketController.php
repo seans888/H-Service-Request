@@ -44,6 +44,11 @@ class TicketController extends Controller
         ]);
     }
 
+    public function actionElw()
+    {
+       
+    }
+
     /**
      * Lists all Ticket models.
      * @return mixed
