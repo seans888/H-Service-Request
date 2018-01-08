@@ -103,6 +103,10 @@ class TicketController extends Controller
             ->where('tick_status="Unassigned"')
             ->limit($pagination->limit)
             ->all();
+            return $this->render('unassigned', [
+                'tickets1' => $tickets1,
+                'pagination' => $pagination,
+                ]);
     }
 
     /**
