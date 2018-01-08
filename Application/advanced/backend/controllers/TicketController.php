@@ -55,6 +55,11 @@ class TicketController extends Controller
         ]);
     }
 
+    public function actionD()
+    {
+       
+    }
+
     /**
      * Lists all Ticket models.
      * @return mixed
