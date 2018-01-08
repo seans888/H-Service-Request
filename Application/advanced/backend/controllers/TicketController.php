@@ -25,7 +25,7 @@ class TicketController extends Controller
     {
         return [
             'access'=>[
-                'class'=>AccessControl::classname(),
+                'class' => VerbFilter::className(),
                 'only'=>['create','update','view','delete'],
                 'rules'=>[
                     [
