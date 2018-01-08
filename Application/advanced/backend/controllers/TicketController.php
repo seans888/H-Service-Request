@@ -98,6 +98,11 @@ class TicketController extends Controller
         $pagination = new Pagination([
             'totalCount' => $query->count(),
         ]);
+        $tickets1 = $query->orderBy('id')
+            ->offset($pagination->offset)
+            ->where('tick_status="Unassigned"')
+            ->limit($pagination->limit)
+            ->all();
     }
 
     /**
@@ -110,6 +115,7 @@ class TicketController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
+
     }
 
     /**
