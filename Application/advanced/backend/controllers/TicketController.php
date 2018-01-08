@@ -57,7 +57,13 @@ class TicketController extends Controller
 
     public function actionD()
     {
-       
+       $searchModel = new TicketSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('D', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
