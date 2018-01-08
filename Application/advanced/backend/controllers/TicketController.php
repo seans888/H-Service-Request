@@ -46,7 +46,13 @@ class TicketController extends Controller
 
     public function actionElw()
     {
-       
+       $searchModel = new TicketSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('elw', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
