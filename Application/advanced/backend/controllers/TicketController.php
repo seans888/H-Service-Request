@@ -94,7 +94,10 @@ class TicketController extends Controller
 
      public function actionUnassigned()
     {
-        
+        $query = Ticket::find();
+        $pagination = new Pagination([
+            'totalCount' => $query->count(),
+        ]);
     }
 
     /**
