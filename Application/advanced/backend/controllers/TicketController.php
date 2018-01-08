@@ -92,6 +92,11 @@ class TicketController extends Controller
         ]);
     }
 
+     public function actionUnassigned()
+    {
+        
+    }
+
     /**
      * Displays a single Ticket model.
      * @param integer $id
