@@ -24,16 +24,6 @@ class TicketController extends Controller
     public function behaviors()
     {
         return [
-            'access'=>[
-                'class' => VerbFilter::className(),
-                'only'=>['create','update','view','delete'],
-                'rules'=>[
-                    [
-                    'allow'=>true,
-                    'roles'=>['@']
-                      ]
-                        ]
-                    ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
