@@ -12,7 +12,6 @@ use backend\models\Country;
 use yii\data\Pagination;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use yii\web\ForbiddenHttpException;
 
 /**
  * TicketController implements the CRUD actions for Ticket model.
